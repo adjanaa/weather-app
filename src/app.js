@@ -87,7 +87,7 @@ app.get("*", (req, res)=> {
     res.render("404", {
         title: "404",
         name: "nano",
-        errorMsg: "P age not found"
+        errorMsg: "Page not found"
     })
 })
 
