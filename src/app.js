@@ -8,9 +8,6 @@ const forecast = require('./utils/forecast')
 const app = express()
 const port = process.env.PORT || 3000
 
-// console.log(__dirname);
-// console.log(__filename);
-
 //links to express config 
 const linkToHtml = path.join(__dirname, "../public")
 const linktoHbs = path.join(__dirname, "../templates/views")
@@ -55,8 +52,7 @@ app.get("/weather", (req, res) =>{
 
     geocode(req.query.adress, (error, data) => { 
         if (error) {  
-            return res.send({ error: error })
-            //return res.send({error})   on peut utiliser aussi ca comme raccourci      
+            return res.send({ error: error })      
         }
        
         forecast(data.longitude, data.latitude, (error, forecastData) => {
